@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+  pgvector:
+    image: ankane/pgvector:latest
+    container_name: pgvector-dev
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  backend:
+    container_name: mini-recsys-backend
+    build: backend/
+    ports:
+      - "8080:8080"
+    networks:
+      - deploy_network
+    depends_on:
+      - pgvector
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  frontend:
+    container_name: mini-recsys-frontend
+    build: frontend/
+    ports:
+        - "8501:8501"
+    networks:
+      - deploy_network
+    depends_on:
+      - backend
+
+networks:
+  deploy_network:
+    driver: bridge
