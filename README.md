@@ -10,14 +10,14 @@ mini search system based on pgvector and BERT
 ### Local
 ```shell
 # launch FastAPI application server
-pip3 install -r backend/requirements.txt \
-  && cd backend/src \
+pip3 install -r server/requirements.txt \
+  && cd server/src \
   && uvicorn main:app --port 8080 --reload
 ```
 ```shell
 # launch Streamlit application server
-pip3 install -r frontend/requirements.txt \
-  && cd frontend/src \
+pip3 install -r client/requirements.txt \
+  && cd client/src \
   && streamlit run main.py --server.port 8501
 ```
 
@@ -35,9 +35,10 @@ docker-compose up --build
 
 ---
 ## TODO
-- [ ] implement batch which loads embedding vectors to db
-- [ ] implement pgvector orm
-- [ ] implement search api
+- [x] implement batch which loads embedding vectors to db
+- [x] implement pgvector orm
+- [x] implement search api
+- [ ] split out bootstrap scripts of api application
 - [ ] implement UI
 - [ ] execute app on docker container
 - [ ] porting web application using streamlit 

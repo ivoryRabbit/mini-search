@@ -1,6 +1,6 @@
 FROM python:3.9.4
 
-WORKDIR /opt/backend/
+WORKDIR /opt/server/
 
 COPY requirements.txt .
 
@@ -10,4 +10,4 @@ COPY src .
 
 EXPOSE 8080
 
-ENTRYPOINT ["gunicorn", "main:app", "-b", ":8080", "-k", "uvicorn.workers.UvicornWorker"]
+ENTRYPOINT ["gunicorn", "main:app", "-b", ":8080", "-k", "uvicorn.workers.UvicornWorker", "--timeout", "120"]
