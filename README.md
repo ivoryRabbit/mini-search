@@ -16,6 +16,8 @@ docker-compose up --build
 ### UI
 - [http://localhost:8501](http://localhost:8501)
 
+![Demo UI](https://github.com/ivoryRabbit/mini-search/assets/30110145/4d5a1b8d-6fa5-4575-adc6-108e617eded6)
+
 ### Docs
 - [http://localhost:8080/docs](http://localhost:8080/docs)
 
