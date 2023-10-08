@@ -2,13 +2,13 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 from page.home import home
-# from page.home import search_movies
+from page.search import search_movies
 
 st.set_page_config(page_title="Mini-Search", page_icon="🤖", layout="wide")
 
 page_names_to_funcs = {
     "Home": home,
-    # "Search Movies": search_movies,
+    "Search Movies": search_movies,
 }
 
 with st.sidebar:
@@ -16,7 +16,7 @@ with st.sidebar:
         menu_title="Select a Demo",
         options=list(page_names_to_funcs.keys()),
         # Remark https://icons.getbootstrap.com/ for icons
-        icons=["house", "hand-thumbs-up", "person", "people"],
+        icons=["house", "search"],
         menu_icon="app-indicator",
         default_index=0,
         styles={
