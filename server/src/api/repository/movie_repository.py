@@ -18,7 +18,10 @@ class MovieRepository:
         with self._session.begin() as session:
             rows = session.scalars(
                 select(Movie)
-                .order_by(Movie.embedding.cosine_distance(query_vector))
+                .order_by(
+                    Movie.embedding.cosine_distance(query_vector),
+                    Movie.year.desc(),
+                )
                 .limit(size)
             ).all()
 
