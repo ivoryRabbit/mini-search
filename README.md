@@ -1,5 +1,5 @@
 # mini-search
-mini search system based on pgvector and BERT
+mini search system based on pgvector and sentence transformer
 
 ## Environments
 - Python 3.9.4
@@ -28,4 +28,3 @@ docker-compose up --build
 - [x] implement search api
 - [x] implement UI
 - [x] execute app on docker container
-- [ ] split out bootstrap scripts of server application 
