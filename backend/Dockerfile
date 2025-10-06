@@ -1,6 +1,6 @@
 FROM python:3.9.4
 
-WORKDIR /opt/server/
+WORKDIR /opt/backend/
 
 COPY requirements.txt .
 

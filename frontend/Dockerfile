@@ -1,6 +1,6 @@
 FROM python:3.9.4-slim
 
-WORKDIR /opt/client/
+WORKDIR /opt/frontend/
 
 COPY requirements.txt .
 
